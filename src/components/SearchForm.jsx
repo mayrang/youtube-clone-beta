@@ -7,7 +7,7 @@ export default function SearchForm() {
     <form>
       <input
         type="text"
-        className="border rounded-md py-2 w-96"
+        className="border rounded-md p-2 w-96 bg-gray-200 text-black"
         placeholder="검색어를 입력해주세요.."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
