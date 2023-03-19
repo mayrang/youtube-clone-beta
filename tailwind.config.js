@@ -4,7 +4,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "header-gray": "#323232",
         "youtube-red": "#ff0000",
       },
     },
