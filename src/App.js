@@ -1,16 +1,18 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/Root";
-import Home from "./pages/Home";
-import SearchList from "./pages/SearchList";
+import Videos from "./pages/Videos";
+import VideoDetail from "./pages/VideoDetail";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "/searchList/:searchData", element: <SearchList /> },
+      { index: true, element: <Videos /> },
+      {path: "/videos", element: <Videos />},
+      { path: "/vidoes/:keyword", element: <Videos />},
+      { path: "/videos/watch/:videoId", element: <VideoDetail /> },
     ],
   },
 ]);
