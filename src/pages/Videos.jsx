@@ -21,7 +21,7 @@ export default function Videos() {
       {isLoading && <p> loading... </p>}
       {error && <p> error </p>}
       <div className="flex items-center justify-center">
-        <ul className="grid w-full max-w-[1260px] xl:grid-cols-4 lg:grid-cols-3  grid-cols-2">
+        <ul className="grid w-full max-w-[1260px] xl:grid-cols-4 lg:grid-cols-3  md:grid-cols-2 sm:grid-cols-1">
           {videos && videos.map((item) => <VideoCard key={item.key} video={item} />)}
         </ul>
       </div>

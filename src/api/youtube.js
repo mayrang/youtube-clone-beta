@@ -1,6 +1,6 @@
 export class Youtube {
   constructor(appClient) {
-    this.httpClient = new appClient();
+    this.httpClient = appClient;
   }
 
   search(keyword) {
