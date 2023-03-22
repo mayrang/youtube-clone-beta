@@ -2,7 +2,7 @@ import axios from "axios";
 
 export class FakeYoutubeClient {
   async search(keyword) {
-    return axios.get("/video/search.json").then((res) => {
+    return axios.get("/videos/search.json").then((res) => {
       const items = res.data.items;
       return items.map((item) => ({ ...item, id: item.id.vidoeId }));
     });
