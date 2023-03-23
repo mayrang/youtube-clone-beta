@@ -13,7 +13,7 @@ export default function Root() {
       <YoutubeContextProvider>
         <QueryClientProvider client={queryClient}>
           <Outlet />
-          <ReactQueryDevtools initialIsOpen={true} />
+          <ReactQueryDevtools />
         </QueryClientProvider>
       </YoutubeContextProvider>
     </>
