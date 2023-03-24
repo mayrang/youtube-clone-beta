@@ -31,4 +31,11 @@ export class YoutubeClient {
       return item;
     });
   }
+
+  async related(params) {
+    return this.httpClient.get("search", params).then((res) => {
+      const items = res.data.items;
+      return items.map((item) => ({ ...item, id: item.id.videoId }));
+    })
+  }
 }

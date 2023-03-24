@@ -14,7 +14,6 @@ export default function Videos() {
   } = useQuery(["videos", keyword], () => youtube.search(keyword), {
     staleTime: 1000 * 60 * 10,
   });
-  console.log(error);
 
   return (
     <div>

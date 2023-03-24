@@ -11,6 +11,10 @@ export class Youtube {
     return this.#chennelInfo(channelId);
   }
 
+  related(videoId) {
+    return this.#relatedVideos(videoId);
+  }
+
   #searchVideos(keyword) {
     return this.httpClient.search({
       params: {
@@ -36,4 +40,15 @@ export class Youtube {
       }
     })
   }
+
+  #relatedVideos(videoId){
+    return this.httpClient.related({
+      params: {
+        relatedToVideoId: videoId,
+        maxResults: "25" ,
+        type: "video"
+      }
+    })
+  }
+
 }
