@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export class FakeYoutubeClient {
-  async search(keyword) {
+  async search() {
     return axios.get("/videos/search.json").then((res) => {
       const items = res.data.items;
       return items.map((item) => ({ ...item, id: item.id.vidoeId }));
@@ -14,5 +14,12 @@ export class FakeYoutubeClient {
       console.log("items", res);
       return items;
     });
+  }
+
+  async channel(){
+    return axios.get("/videos/channel.json").then((res) => {
+      const item = res.data.items[0];
+      return item;
+    })
   }
 }

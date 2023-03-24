@@ -24,4 +24,11 @@ export class YoutubeClient {
       return items.map((item) => ({ ...item, id: item.id.videoId }));
     });
   }
+
+  async channel(params) {
+    return this.httpClient.get("/channels", params).then((res) => {
+      const item = res.data.items[0];
+      return item;
+    });
+  }
 }

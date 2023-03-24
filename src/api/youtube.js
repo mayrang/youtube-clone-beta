@@ -7,6 +7,10 @@ export class Youtube {
     return keyword ? this.#searchVideos(keyword) : this.#popularVideos();
   }
 
+  channel(channelId) {
+    return this.#chennelInfo(channelId);
+  }
+
   #searchVideos(keyword) {
     return this.httpClient.search({
       params: {
@@ -23,5 +27,13 @@ export class Youtube {
         chart: "mostPopular",
       },
     });
+  }
+
+  #chennelInfo(channelId) {
+    return this.httpClient.channel({
+      params: {
+        id: channelId
+      }
+    })
   }
 }
